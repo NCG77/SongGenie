@@ -84,6 +84,7 @@ class SongGenie:
         threading.Thread(target=self.chatting(text), args=(text,)).start()
 
     def chatting(self,text):
+        #Chatting using API integration From Hugging face Pretrained Model (MRF18 - chatbot)
         try:
             if text.strip():  # Check if the input is not empty
                 headers = {"Authorization": f"Bearer {API_KEY}"}
@@ -101,6 +102,7 @@ class SongGenie:
             self.entry.delete(0, 'end')
 
     def get_song_for_emotion(self, emotion):
+        #Selecting song Depending on the mood
         if emotion == "sadness":
             return "positive mood booster songs"
         elif emotion == "joy":
@@ -146,6 +148,7 @@ class SongGenie:
         pwtk.playonyt(text)
 
     def song_playing(self):
+        # Playing songs depending on what the mood is
         try:
             text = self.globaltext.strip()
             if text == "":
@@ -164,7 +167,7 @@ class SongGenie:
             self.txt.configure(state="disabled")
             self.entry.delete(0, 'end')
 
-# Main program
+# Initilizing class
 if __name__ == "__main__":
     Genie = SongGenie()
     Genie.Main_Window.mainloop()
