@@ -1,8 +1,5 @@
 # SongGenie
 
-## Video Demo
-URL: 
-
 ## Description
 SongGenie is a Python application that acts as an interactive chatbot and song recommendation system. It utilizes Hugging Face's chatbot and emotion detection models to generate responses based on user input, and recommends songs according to detected emotions.
 
